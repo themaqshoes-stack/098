@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Message Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<section class="login" id="login" hidden>
+  <div class="login-art">
+    <div class="brand"><span class="logo" id="logoA"></span> Message Center</div>
+    <div class="art-mid">
+      <span class="eyebrow">Secure internal messaging</span>
+      <h2>Every conversation, in one trusted place.</h2>
+      <p>A private channel between administrators and users. Messages are tracked, replies are threaded and read receipts show what has been seen.</p>
+      <div class="feat" id="feat"></div>
+    </div>
+    <small class="art-foot">&copy; Message Center &middot; Authorised users only</small>
+  </div>
+  <div class="login-form">
+    <form class="login-card" id="loginForm" autocomplete="on" novalidate>
+      <div class="brand lc-brand"><span class="logo" id="logoC"></span> Message Center</div>
+      <h1>Welcome back</h1>
+      <p class="sub">Sign in to read and send messages.</p>
+      <label class="field"><span>Email address</span>
+        <span class="inwrap"><span class="lead" id="icMail"></span><input class="input" id="lEmail" type="email" required autocomplete="username" placeholder="name@company.com" autofocus></span></label>
+      <label class="field"><span>Password</span>
+        <span class="inwrap"><span class="lead" id="icLock"></span><input class="input" id="lPass" type="password" required autocomplete="current-password" placeholder="Enter your password"><button type="button" class="eye" id="eyeBtn" aria-label="Show password" aria-pressed="false"></button></span>
+        <small class="caps" id="caps" hidden>Caps Lock is on</small></label>
+      <div class="lrow">
+        <label class="chk"><input type="checkbox" id="lRemember"><span>Remember my email</span></label>
+        <span class="muted-s">Forgot password? Ask your administrator.</span>
+      </div>
+      <p class="err" id="lErr" role="alert" aria-live="polite"></p>
+      <button class="btn primary lbtn" id="lBtn"><span class="spin" hidden></span><span class="lt">Sign in</span></button>
+      <div id="demoSlot"></div>
+      <p class="secure" id="secureNote"></p>
+    </form>
+  </div>
+</section>
+
+<!-- APP -->
+<div class="shell" id="shell" hidden>
+  <div class="scrim" id="scrim"></div>
+  <aside class="side">
+    <div class="brand"><span class="logo" id="logoB"></span> Message Center</div>
+    <button class="btn primary compose" id="composeBtn"></button>
+    <nav class="nav" id="nav" aria-label="Mailbox"></nav>
+    <div class="me" id="me"></div>
+  </aside>
+
+  <main class="main" id="main">
+    <header class="top">
+      <button class="btn ghost menu-btn" id="menuBtn" aria-label="Menu"></button>
+      <h1 id="title">Inbox</h1>
+      <span class="sp"></span>
+      <label class="search" id="searchWrap"><span class="sr">Search</span><span id="searchIc"></span><input class="input" id="search" type="search" placeholder="Search messages…"></label>
+    </header>
+    <section class="stats" id="stats" aria-label="Overview"></section>
+    <section class="panes" id="panes">
+      <div class="card list" id="listCard"></div>
+      <div class="card conv" id="conv"></div>
+    </section>
+    <section class="card usersview" id="usersView" hidden></section>
+  </main>
+</div>
+
+<dialog id="dlg"></dialog>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script>window.APP_CONFIG={demo:false};</script>
+<script src="assets/api.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
